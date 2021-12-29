@@ -13,7 +13,7 @@ class Pagina1Page extends StatelessWidget {
       ),
       body: BlocBuilder<UserBloc, UserState>(builder: (_, state) {
         return state.existUser
-            ? InformacionUsuario(user: state.user,)
+            ? InformacionUsuario(user: state.user!,)
             : const Center(
                 child: Text('No hay usuario seleccionado'),
               );
@@ -28,7 +28,7 @@ class Pagina1Page extends StatelessWidget {
 
 class InformacionUsuario extends StatelessWidget {
 final User user;
-const InformacionUsuario({ this.user});
+const InformacionUsuario({ required this.user});
 
   @override
   Widget build(BuildContext context) {
