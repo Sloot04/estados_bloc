@@ -30,4 +30,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     super.onTransition(transition);
     print(transition);
   }
+
+   @override
+  void onEvent(UserEvent event) {
+    super.onEvent(event);
+    print({'Event: ', event});
+  }
 }
